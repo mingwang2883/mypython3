@@ -19,15 +19,15 @@ class order:
         port = '0'
         relay_address =['000','010','013','0d4','014','02f','04b','100','112','130','14e','16c','18a','1a8','1c6','1d8']
         relay_count = ['06','01','01','05','1b','0c','03','12','1e','1e','1e','1e','1e','1e','09','08']
-		try:
-			for i in range(len(relay_count)):
-				data_order = dev_id + '040' + relay_address[i] + '00' + relay_count[i]
-				self.handle_order(port,data_order)
-			if g_flag:
-				self.handle_Device_config(self.db_path)
-				config_flag()
+	try:
+	    for i in range(len(relay_count)):
+		data_order = dev_id + '040' + relay_address[i] + '00' + relay_count[i]
+		self.handle_order(port,data_order)
+	    if g_flag:
+		self.handle_Device_config(self.db_path)
+		config_flag()
 
-			self.insert_Device_data(self.db_path)
+	    self.insert_Device_data(self.db_path)
         except:
             pass
 
